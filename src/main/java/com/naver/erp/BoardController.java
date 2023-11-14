@@ -47,9 +47,6 @@ public class BoardController {
    @Autowired
 	private KospiDaqDAO kospiDaqDAO;
 
-   //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
-   // URL 주소 /boardList.do 로 접근하면 호출되는 메소드 선언
-   //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
    @RequestMapping( value="/boardList.do")
    public ModelAndView boardList( 
          //----------------------------------------------------------------
@@ -76,37 +73,7 @@ public class BoardController {
 	   				
 	   
 	   			String mem_nick = (String)session.getAttribute("mem_nick");
-                  /* SessionInterceptor에서 로그인 성공하면 들어오게 설정해놔서 필요 없음
-                        //--------------------------------------------------------------
-                        // HttpSession 객체에서 "mid" 라는 키값으로 저장된 데이터 꺼내서 변수 mid 에 저장하기
-                        // 즉 로그인이 성공했을 때 HttpSession 객체에 저장한  로그인 아이디를 꺼내서  변수 mid 에 저장하기.
-                        //--------------------------------------------------------------
-                        String mid = (String)session.getAttribute("mid");
-                        //--------------------------------------------------------------
-                        // 만약 mid 변수 안에 null 이 있으면
-                        // 즉 로그인이 실패 했을 때
-                        //--------------------------------------------------------------
-                        if( mid==null ) {
-                           //-------------------------------------------------------------
-                           // [ModelAndView 객체] 생성하기
-                           // [ModelAndView 객체]의 setViewName 메소드 호출하여  
-                           //               [호출할 JSP 페이지명]을 문자로 저장하기
-                           // [ModelAndView 객체] 리턴하기
-                           //-------------------------------------------------------------
-                           ModelAndView mav = new ModelAndView();
-                           mav.setViewName( "loginFail.jsp" );
-                           return  mav;
-                        }
-                  */
-               
-      //-------------------------------------------------------------
-      // getBoardSearchResultMap 메소드를 호출하여
-         // 게시판 검색 결과 관련 각종 정보들 저장한 Map<String,Object> 객체 구하고
-         // 이 객체의 메위주를 변수 boardMap 에 저장하기
-         // 이 객체안의 모든 정보는 boardList.jsp 페이지에서 사용될 예정이다.
-      
-         //근데 이 메소드 호출하는데 왼쪽에 객체 메위주가 없음 왜냐면 같은 동료라서 필요없음
-      //-------------------------------------------------------------
+                 
       Map<String,Object> boardMap = getBoardSearchResultMap( boardSearchDTO );
       
       Map<String, Object> kospiListDescMap = getKospiListDescMap();
