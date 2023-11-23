@@ -1,4 +1,4 @@
 # teamprj_jakjeon
 jakjeon
 
-주식추천프로젝트입니다.
+주식 추천 웹사이트 입니다.
