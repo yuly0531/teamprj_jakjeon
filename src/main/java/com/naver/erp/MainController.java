@@ -964,7 +964,7 @@ public class MainController {
 				 
 			
 			 Map<String,Object> youtubeMap=new HashMap<String,Object>();
-			 String apiKey = "AIzaSyCRuTfiPujuJaMAqnq_U9owfW5tuaoL350";
+			
 					     
 					     
 					       try {
